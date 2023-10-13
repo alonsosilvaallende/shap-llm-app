@@ -3,3 +3,4 @@ streamlit
 streamlit-shap
 torch
 transformers
+matplotlib
