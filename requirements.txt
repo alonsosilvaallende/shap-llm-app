@@ -1,4 +1,5 @@
 shap
 streamlit
 streamlit-shap
+torch
 transformers
