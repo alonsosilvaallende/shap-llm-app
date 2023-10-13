@@ -26,15 +26,16 @@ def get_shap_values():
     # Sample instead of returning the most likely token
     model.config.do_sample=False
     # Set maximum length
-    model.config.max_new_tokens = 50
+    model.config.max_new_tokens = 10
     # Generate text with stop_token set to "."
     output = model.generate(input_ids)
-    
-    output_text = tokenizer.decode(output[0][-50:], skip_special_tokens=True)
+    st.write("Hello 1")
+    output_text = tokenizer.decode(output[0][-10:], skip_special_tokens=True)
     
     model.config.is_decoder = True
     explainer = shap.Explainer(model, tokenizer)
     shap_values = explainer([prompt])
+    st.write("Hello 2")
     return shap_values
 
 shap_values = get_shap_values()
